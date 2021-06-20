@@ -6,6 +6,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300&display=swap" rel="stylesheet">
     <script src="main.js"></script>
     <title>Sudoku Game</title>
 </head>
@@ -13,24 +15,33 @@
     <h1>Sudoku</h1>
     <div id="setupGame" class="setupGame">
         <div id="diff">
-            <h3>Choose Difficulty: </h3>
-            <label><input id="diff-1" type="radio" name="diff" value="easy" checked>Easy</label>
-            <label><input id="diff-2" type="radio" name="diff" value="medium">Medium</label>
-            <label><input id="diff-3" type="radio" name="diff" value="hard">Hard</label>
-
+            <div class="custom-select">
+                <label>Choose Difficulty: </label>
+                <select name="diff" id="">
+                    <option id="diff-1" type="radio" name="diff" value="easy" selected>Easy</option>
+                    <option id="diff-2" type="radio" name="diff" value="medium">Medium</option>
+                    <option id="diff-3" type="radio" name="diff" value="hard">Hard</option>
+                </select>
+            </div>
         </div>
         <div id="time">
-            <h3>Choose Time: </h3>
-            <label><input id="time-1" type="radio" name="time" value="three">3 Min</label>
-            <label><input id="time-2" type="radio" name="time" value="five" checked>5 Min</label>
-            <label><input id="time-3" type="radio" name="time" value="ten">10 Min</label>
-
+            <div class="custom-select">
+                <label>Choose Time: </label>
+                <select name="time">
+                    <option id="time-1" type="radio" name="time" value="three">3 Min</option>
+                    <option id="time-2" type="radio" name="time" value="five" selected>5 Min</option>
+                    <option id="time-3" type="radio" name="time" value="ten">10 Min</option>
+                </select>
+            </div>
         </div>
         <div id="theme">
+            
+            <!-- Rounded switch -->
             <h3>Choose Theme: </h3>
-            <label><input id="theme-1" type="radio" name="theme" value="light" checked>Light</label>
-            <label><input id="theme-2" type="radio" name="theme" value="dark">Dark</label>
-
+            <label class="switch">
+                <input id="theme-1" type="checkbox" checked>
+                <span class="slider round"></span>
+            </label>
         </div>
     </div>
     <button id="start-btn">Create New Game!</button>
@@ -59,7 +70,7 @@
     </div>
 </body>
 <footer>
-<p>dsffffffff</p>
+    <p>dsffffffff</p>
 </footer>
 
 </html>

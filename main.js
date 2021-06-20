@@ -16,6 +16,7 @@ let timer, timeRemaining, lives, selectedNum, selectedTile;
 let disableSelect;
 
 window.onload = function () {
+    id("theme-1").addEventListener("click", setTheme);
     // Run startGame 
     id("start-btn").addEventListener("click", startGame);
     // Add event listener to each number in number container
@@ -47,8 +48,8 @@ window.onload = function () {
 function startGame() {
     // Choose board difficulty
     let board;
-    if (id("diff-1").checked) board = easy[0];
-    else if (id("diff-2").checked) board = medium[0];
+    if (id("diff-1").selected) board = easy[0];
+    else if (id("diff-2").selected) board = medium[0];
     else board = hard[0];
 
     //Set Lives to 3 and enable selecting numbers and tiles
@@ -60,21 +61,23 @@ function startGame() {
     generateBoard(board);
     //Starts the timer
     startTimer();
-    //Sets theme based on input
+
+    //Show number container
+    id("number-container").classList.remove("hidden");
+}
+function setTheme(){
+        //Sets theme based on input
     if (id("theme-1").checked) {
         qs("body").classList.remove("dark");
     }
     else {
         qs("body").classList.add("dark");
     }
-    //Show number container
-    id("number-container").classList.remove("hidden");
 }
-
 function startTimer() {
     //Sets time remaining based on input
-    if (id("time-1").checked) timeRemaining = 180;
-    else if (id("time-2").checked) timeRemaining = 300;
+    if (id("time-1").selected) timeRemaining = 180;
+    else if (id("time-2").selected) timeRemaining = 300;
     else timeRemaining = 600;
     //Sets timer for first second
     id("timer").textContent = timeConversion(timeRemaining);
@@ -225,8 +228,8 @@ function endGame() {
 function checkCorrect(tile) {
     // Set solution based on difficulty selection
     let solution;
-    if (id("diff-1").checked) solution = easy[1];
-    else if (id("diff-2").checked) solution = medium[1];
+    if (id("diff-1").selected) solution = easy[1];
+    else if (id("diff-2").selected) solution = medium[1];
     else solution = hard[1];
     // If tiles number is equal to solution's number
     if (solution.charAt(tile.id) === tile.textContent) return true;
