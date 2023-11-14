@@ -10,13 +10,23 @@
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300&display=swap" rel="stylesheet">
     <script src="main.js"></script>
     <title>Sudoku Game</title>
+    <div id="theme">
+        <!-- Rounded switch -->
+        <h3>Change Theme: </h3>
+        <label class="switch">
+            <input id="theme-1" type="checkbox" checked>
+            <span class="slider round"></span>
+        </label>
+    </div>
+</div>
 </head>
 <header>
     <h1>Sudoku</h1>
     <div id="setupGame" class="setupGame">
+        <button id="start-btn">Create New Game!</button>
         <div id="diff">
             <div class="custom-select">
-                <label>Choose Difficulty: </label>
+                <label>Change Difficulty: </label>
                 <select name="diff" id="">
                     <option id="diff-1" type="radio" name="diff" value="easy" selected>Easy</option>
                     <option id="diff-2" type="radio" name="diff" value="medium">Medium</option>
@@ -26,7 +36,7 @@
         </div>
         <div id="time">
             <div class="custom-select">
-                <label>Choose Time: </label>
+                <label>Change Time: </label>
                 <select name="time">
                     <option id="time-1" type="radio" name="time" value="three">3 Min</option>
                     <option id="time-2" type="radio" name="time" value="five" selected>5 Min</option>
@@ -34,17 +44,7 @@
                 </select>
             </div>
         </div>
-        <div id="theme">
-            
-            <!-- Rounded switch -->
-            <h3>Choose Theme: </h3>
-            <label class="switch">
-                <input id="theme-1" type="checkbox" checked>
-                <span class="slider round"></span>
-            </label>
-        </div>
-    </div>
-    <button id="start-btn">Create New Game!</button>
+       
 </header>
 
 <body>
@@ -70,7 +70,7 @@
     </div>
 </body>
 <footer>
-    <p>Website created by Noam Karavani</p>
+    <p>© Website created by Noam Karavani</p>
 </footer>
 
 </html>
